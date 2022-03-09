@@ -7,9 +7,6 @@ test('test buildBoard constructor with valid input', () => {
     expect(board.solvedBoardString).toEqual(null);
 })
 
-//test case for checking internal representation
-
-
 test('test buildBoard constructor with invalid input', () => {
     expect(() => {
         const boardString2 = '0, 2, 0, 0, 9';

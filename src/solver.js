@@ -21,6 +21,7 @@ class SudokuSolver {
      * @returns {object} JSON representing output of the sudoku solver
      */
     solve() {
+        console.log('--------------------------------------');
         console.log('\nGiven Board: \n');
         displayBoard(this._sudokuBoard.boardString);
         console.log('\n');
@@ -30,7 +31,8 @@ class SudokuSolver {
             displayBoard(this._sudokuBoard.solvedBoardString);
         } else {
             console.log('No solution');
-        }     
+        }
+        console.log('--------------------------------------');
         return solverOutput
     }
 }

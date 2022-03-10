@@ -1,4 +1,5 @@
 const SudokuBoard  = require("./board.js");
+const { displayBoard } = require('../lib/utils.js')
 
 class SudokuSolver {
     /**
@@ -16,10 +17,14 @@ class SudokuSolver {
 
     solve() {
         console.log('Given Board: \n');
-        this._sudokuBoard.displayBoard();
+        displayBoard(this._sudokuBoard.boardString);
         const solverOutput = this._sudokuBoard.solveBoard();
         console.log('Solved Board: \n')
-        this._sudokuBoard.displayBoard();
+        if (this._sudokuBoard.solvedBoardString) {
+            displayBoard(this._sudokuBoard.solvedBoardString);
+        } else {
+            console.log('No solution');
+        }     
         return solverOutput
     }
 }

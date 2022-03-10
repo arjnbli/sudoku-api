@@ -61,6 +61,6 @@ app.post('/solve-sudoku', async (req, res, next) => {
     }
 });
 
-app.listen(PORT, (req, res) => {
+app.listen(PORT, () => {
     console.log(`Server is listening on port ${PORT}`);
 });

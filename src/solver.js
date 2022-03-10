@@ -14,7 +14,12 @@ class SudokuSolver {
     get sudokuBoard() {
         return this._sudokuBoard;
     }
-
+    /**
+     * Driver method for running the solver on an input board and displaying
+     * the output on the server end
+     * 
+     * @returns {object} JSON representing output of the sudoku solver
+     */
     solve() {
         console.log('Given Board: \n');
         displayBoard(this._sudokuBoard.boardString);

@@ -24,13 +24,17 @@ test('test counter class', () => {
     expect(counter2.count).toEqual(6);
 })
 
-test('test validate input function', () => {
+test('test validate input function 1', () => {
     const boardString1 = '7, 8, 0, 4, 0, 0, 1, 2, 0, 6, 0, 0, 0, 7, 5, 0, 0, 9, 0, 0, 0, 6, 0, 1, 0, 7, 8, 0, 0, 7, 0, 4, 0, 2, 6, 0, 0, 0, 1, 0, 5, 0, 9, 3, 0, 9, 0, 4, 0, 6, 0, 0, 0, 5, 0, 7, 0, 3, 0, 0, 0, 1, 2, 1, 2, 0, 0, 0, 7, 4, 0, 0, 0, 4, 9, 2, 0, 6, 0, 0, 7';
     expect(validateInput(boardString1)).toEqual(true);
+})
 
+test('test validate input function 2', () => {
     const boardString2 = '7, 8, 0, 4, a, $, 1, 2, 0, 6, 0, 0, 0, 7, 5, 0, 0, 9, 0, 0, 0, 6, 0, 1, 0, 7, 8, 0, 0, 7, 0, 4, 0, 2, 6, 0, 0, 0, 1, 0, 5, 0, 9, 3, 0, 9, 0, 4, 0, 6, 0, 0, 0, 5, 0, 7, 0, 3, 0, 0, 0, 1, 2, 1, 2, 0, 0, 0, 7, 4, 0, 0, 0, 4, 9, 2, 0, 6, 0, 0, 7';
     expect(validateInput(boardString2)).toEqual(false);
+})
 
+test('test validate input function 3', () => {
     const boardString3 = '7, 8, 0, 4, 0, 0, 1, 2, 0, 0, 7, 0, 3, 0, 0, 0, 1, 2, 1, 2, 0, 0, 0, 7, 4, 0, 0, 0, 4, 9, 2, 0, 6, 0, 0, 7';
     expect(validateInput(boardString3)).toEqual(false);
 })

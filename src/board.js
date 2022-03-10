@@ -308,21 +308,6 @@ class SudokuBoard {
             }
             return boardArray.join(', ');
         }
-
-    /**
-     * Helper method for displaying the internal board state in the form of an 2-D array
-     * 
-     */
-    displayBoard() {
-        const boardString = [];
-        for (const row of this._board) {
-            for (const cell of row) {
-                boardString.push(String(cell.val) + ' ');
-            }
-            boardString.push('\n');
-        }
-        console.log(boardString.join(''));
-    }
 }
 
 module.exports = SudokuBoard;

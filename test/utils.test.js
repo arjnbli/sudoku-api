@@ -1,4 +1,4 @@
-const { Cell, Counter } = require('../lib/utils.js');
+const { Cell, Counter, validateInput } = require('../lib/utils.js');
 
 test('test cell class', () => {
     const cell = new Cell(4, new Set([1, 2, 3]));
@@ -22,4 +22,15 @@ test('test counter class', () => {
     expect(counter2.count).toEqual(5);
     counter2.incrementCounter();
     expect(counter2.count).toEqual(6);
+})
+
+test('test validate input function', () => {
+    const boardString1 = '7, 8, 0, 4, 0, 0, 1, 2, 0, 6, 0, 0, 0, 7, 5, 0, 0, 9, 0, 0, 0, 6, 0, 1, 0, 7, 8, 0, 0, 7, 0, 4, 0, 2, 6, 0, 0, 0, 1, 0, 5, 0, 9, 3, 0, 9, 0, 4, 0, 6, 0, 0, 0, 5, 0, 7, 0, 3, 0, 0, 0, 1, 2, 1, 2, 0, 0, 0, 7, 4, 0, 0, 0, 4, 9, 2, 0, 6, 0, 0, 7';
+    expect(validateInput(boardString1)).toEqual(true);
+
+    const boardString2 = '7, 8, 0, 4, a, $, 1, 2, 0, 6, 0, 0, 0, 7, 5, 0, 0, 9, 0, 0, 0, 6, 0, 1, 0, 7, 8, 0, 0, 7, 0, 4, 0, 2, 6, 0, 0, 0, 1, 0, 5, 0, 9, 3, 0, 9, 0, 4, 0, 6, 0, 0, 0, 5, 0, 7, 0, 3, 0, 0, 0, 1, 2, 1, 2, 0, 0, 0, 7, 4, 0, 0, 0, 4, 9, 2, 0, 6, 0, 0, 7';
+    expect(validateInput(boardString2)).toEqual(false);
+
+    const boardString3 = '7, 8, 0, 4, 0, 0, 1, 2, 0, 0, 7, 0, 3, 0, 0, 0, 1, 2, 1, 2, 0, 0, 0, 7, 4, 0, 0, 0, 4, 9, 2, 0, 6, 0, 0, 7';
+    expect(validateInput(boardString3)).toEqual(false);
 })

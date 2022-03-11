@@ -22,6 +22,7 @@ class SudokuSolver {
      */
     solve() {
         console.log('--------------------------------------');
+        console.log('\nComputed by solver\n')
         console.log('\nGiven Board: \n');
         displayBoard(this._sudokuBoard.boardString);
         console.log('\n');

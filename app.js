@@ -32,6 +32,7 @@ app.post('/solve-sudoku', async (req, res, next) => {
         const solver = new SudokuSolver(req.boardString);
         if (cachedResponse) {
             client.quit();
+            console.log('--------------------------------------');
             console.log('\n** Retrieved from cache **');
             console.log('\nGiven Board:\n');
             displayBoard(solver.sudokuBoard.boardString);
@@ -41,7 +42,7 @@ app.post('/solve-sudoku', async (req, res, next) => {
             } else {
                 console.log('No Solution');
             }
-            
+            console.log('--------------------------------------');
             res.status(201).send('\n' + JSON.stringify(cachedResponse) + '\n');     
         //If the input board is not found in the cache, the solver calculates the solution.
         //The cache is updated and the response is sent

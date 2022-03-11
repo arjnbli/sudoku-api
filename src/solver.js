@@ -30,8 +30,10 @@ class SudokuSolver {
         console.log('Solved Board: \n')
         if (this._sudokuBoard.solvedBoardString) {
             displayBoard(this._sudokuBoard.solvedBoardString);
+            console.log(`\nNumber of backtracks : ${solverOutput.numBacktracks}`);
         } else {
             console.log('No solution');
+            console.log(`\nNumber of backtracks : ${solverOutput.numBacktracks}`);
         }
         console.log('--------------------------------------');
         return solverOutput

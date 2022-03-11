@@ -42,6 +42,7 @@ app.post('/solve-sudoku', async (req, res, next) => {
             } else {
                 console.log('No Solution');
             }
+            console.log(`\nNumber of backtracks : ${cachedResponse.numBacktracks}`);
             console.log('--------------------------------------');
             res.status(201).send('\n' + JSON.stringify(cachedResponse) + '\n');     
         //If the input board is not found in the cache, the solver calculates the solution.
